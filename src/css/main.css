@@ -3,11 +3,12 @@
 }
 
 #q4Wrapper {
-  background-color: #2A3035;
+  background-color: #2a3035;
   font-family: "Roboto", sans-serif;
   color: white;
 }
-#q4Wrapper h1, #q4Wrapper h3 {
+#q4Wrapper h1,
+#q4Wrapper h3 {
   margin: 0;
 }
 #q4Wrapper h1 {
@@ -18,8 +19,9 @@
   line-height: 20px;
   text-transform: uppercase;
 }
-#q4Wrapper header, #q4Wrapper footer {
-  background-color: #22272B;
+#q4Wrapper header,
+#q4Wrapper footer {
+  background-color: #22272b;
 }
 #q4Wrapper header {
   padding: 20px;
@@ -59,6 +61,35 @@
 }
 
 /* Begin styling the report items here! */
+/* Makes images responsive and easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+/* Set reports to grid with a gap of 30px */
 .reports {
+  display: -ms-grid;
+  display: grid;
+  gap: 30px;
+}
 
+/* Between 501px and 768px, 2 reports per row */
+@media screen and (min-width: 501px) {
+  .reports {
+    -ms-grid-columns: 1fr 30px 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Above 768px, 3 reports per row */
+@media screen and (min-width: 769px) {
+  .reports {
+    -ms-grid-columns: 1fr 30px 1fr 30px 1fr;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* File information */
+.reports_meta {
+  color: rgba(255, 255, 255, 0.75);
 }
